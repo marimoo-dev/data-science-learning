@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from pathlib import Path
 
-url = "https://sumsel.antaranews.com/"
+url = "https://sumsel.antaranews.com/tag/baturaja"
 
 headers = {
     "User-Agent": "Mozilla/5.0"
@@ -40,7 +40,6 @@ try:
                 print(f"{row['No']}. {row['Judul Berita']}")
                 print(f"   {row['Link Berita']}\n")
 
-            # Simpan di folder yang sama dengan file Python
             output_file = (
                 Path(__file__).resolve().parent /
                 "hasil_scraping_berita.csv"
