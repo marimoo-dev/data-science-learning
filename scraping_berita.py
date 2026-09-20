@@ -35,11 +35,16 @@ try:
             df = pd.DataFrame(data_berita[:5])
 
             print("5 Berita Terbaru:\n")
+
             for _, row in df.iterrows():
                 print(f"{row['No']}. {row['Judul Berita']}")
                 print(f"   {row['Link Berita']}\n")
 
-            output_file = Path.home() / "Downloads" / "hasil_scraping_berita.csv"
+            # Simpan di folder yang sama dengan file Python
+            output_file = (
+                Path(__file__).resolve().parent /
+                "hasil_scraping_berita.csv"
+            )
 
             df.to_csv(
                 output_file,
